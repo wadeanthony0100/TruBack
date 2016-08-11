@@ -5,7 +5,15 @@ document.addEventListener("keydown", (event)=>{ \
     /*console.log("Backspace pressed...");*/\
     var el = document.activeElement; \
     if((el.tagName !== "INPUT") && (el.contentEditable !== "true")){\
-      window.history.back(); \
+      while (el.parentNode) {\
+        el = el.parentNode;\
+        if((el.tagName === "INPUT") || (el.contentEditable === "true")){\
+          break;\
+        }\
+      }\
+      if (el == document){\
+        window.history.back(); \
+      }\
     }\
     /*console.log("...But we chose not to go back.");*/\
   }}, false);  \

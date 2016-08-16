@@ -6,10 +6,10 @@ document.addEventListener("keydown", (event)=>{ \
     var el = document.activeElement; \
     if((el.tagName !== "INPUT") && (el.contentEditable !== "true")){\
       while (el.parentNode) {\
-        el = el.parentNode;\
         if((el.tagName === "INPUT" || el.tagName === "TEXTAREA") || (el.contentEditable === "true")){\
           break;\
         }\
+        el = el.parentNode;\
       }\
       if (el == document){\
         window.history.back(); \

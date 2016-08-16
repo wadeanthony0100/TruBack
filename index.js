@@ -7,7 +7,7 @@ document.addEventListener("keydown", (event)=>{ \
     if((el.tagName !== "INPUT") && (el.contentEditable !== "true")){\
       while (el.parentNode) {\
         el = el.parentNode;\
-        if((el.tagName === "INPUT") || (el.contentEditable === "true")){\
+        if((el.tagName === "INPUT" || el.tagName === "TEXTAREA") || (el.contentEditable === "true")){\
           break;\
         }\
       }\
